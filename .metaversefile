@@ -1,5 +1,5 @@
 {
-  "name": "Speaker",
+  "name": "react-Speaker",
   "description": "Make it bump. Use 'Speaker_2' mid and woofer morph targets to control the woofers",
-  "start_url": "react-speaker.glb"
+  "start_url": "react-Speaker.glb"
 }
