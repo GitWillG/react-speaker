@@ -39,32 +39,32 @@ export default () => {
   //   autoPlay: true,
   // }
 
-  //seperate controls for testing
-  // //get music ->CLEAN
-  // document.body.onkeyup = (e) => {
-  //   if (e.code === 'Digit1') {
-  //     audio = getAudio({ createOnCall: false })
-  //     createAudio(audioTrackInformation)
-  //   }
-  // }
-  // //play  ->CLEAN
-  // document.body.onkeyup = (e) => {
-  //   if (e.code === 'Digit2') {
-  //       if (audio.paused) {
-  //         audio.play()
-  //       }
-  //     createAudio(audioTrackInformation)
-  //   }
-  // }
-  // //pause music ->CLEAN
-  // document.body.onkeyup = (e) => {
-  //   if (e.code === 'Digit3') {
-  //     if (audio.paused !== undefined) {
-  //         audio.pause()
-  //     }
-  //     createAudio(audioTrackInformation)
-  //   }
-  // }
+  // seperate controls for testing
+  //get music ->CLEAN
+  document.body.onkeyup = (e) => {
+    if (e.code === 'Digit1') {
+      audio = getAudio({ createOnCall: false })
+      createAudio(audioTrackInformation)
+    }
+  }
+  //play  ->CLEAN
+  document.body.onkeyup = (e) => {
+    if (e.code === 'Digit2') {
+        if (audio.paused) {
+          audio.play()
+        }
+      createAudio(audioTrackInformation)
+    }
+  }
+  //pause music ->CLEAN
+  document.body.onkeyup = (e) => {
+    if (e.code === 'Digit3') {
+      if (audio.paused !== undefined) {
+          audio.pause()
+      }
+      createAudio(audioTrackInformation)
+    }
+  }
 
 
   //screen shake method for heavy bass
