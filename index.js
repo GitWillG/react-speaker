@@ -28,77 +28,6 @@ export default () => {
   app.name = 'react-Speaker'
   const physics = usePhysics();
   
-  // for screenshake later
-  //const cameraManager = useCameraManager();
-
-  // const audioLoader = new THREE.AudioLoader();
-  // audioLoader.load( 'music/dungeon.mp3', function( buffer ) {
-  //   sound.setBuffer( buffer );
-  //   sound.setLoop(true);
-  //   sound.setVolume(0.5);
-  //   sound.play();
-  // });
-
-  // let activated = false;
-  // let activateCb = null;
-  
-  // const audioTrackInformation = {
-  //   source: baseUrl + 'music/dungeon.mp3',
-  //   autoPlay: true,
-  // }
-
-  // // seperate controls for testing
-  // //get music ->CLEAN
-  // document.body.onkeyup = (e) => {
-  //   if (e.code === 'Digit1') {
-  //     audio = getAudio({ createOnCall: false })
-  //     createAudio(audioTrackInformation);
-  //     console.log("get audio");
-  //   }
-  // }
-  // //play  ->CLEAN
-  // document.body.onkeyup = (e) => {
-  //   if (e.code === 'Digit2') {
-  //       if (audio.paused) {
-  //         audio.play()
-  //         console.log("play audio");
-  //       }
-  //   }
-  // }
-  // //pause music ->CLEAN
-  // document.body.onkeyup = (e) => {
-  //   if (e.code === 'Digit3') {
-  //     if (audio.paused !== undefined) {
-  //         audio.pause()
-  //         console.log("pause audio");
-  //     }
-  //   }
-  // }
-  // activateCb = () => {
-  //   activated = !activated;
-
-  //   if (activated) {
-  //      audio.play();
-      
-  //     _shake();
-  //   } else {
-  //     audio.pause();
-  //   }
-  // };
-
-  //screen shake method for heavy bass
-  // const {animations} = o;
-  // o = o.scene;
-  // app.add(o);
-
-
-  //   localVector.setFromMatrixPosition(o.matrixWorld);
-  //   cameraManager.addShake(localVector, 0.2, 30, 500);
-  
-
-  // const _shake = () => {
-  //   _shake()
-  // }
  
   
  // ->CLEAN
@@ -130,25 +59,3 @@ export default () => {
 
 
 
-
-
- 
-
-
-
-  
-
-
-// alt loading method
-  // const speakerInfo = {
-  //   fileName: 'speaker.glb',
-  //   // filePath: baseUrl + './',
-  // }
-  // const neonClub = loadModel(neonClubInfo)
-
-  // // then promises 
-  // // Promise.all([neonClub]).then((values) => {
-  // //   values.forEach((model) => {
-  // //     app.add(model)
-  // //   })
-  // // })
