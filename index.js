@@ -31,16 +31,16 @@ export default () => {
   // for screenshake later
   //const cameraManager = useCameraManager();
 
-  const audioLoader = new THREE.AudioLoader();
-  audioLoader.load( 'music/dungeon.mp3', function( buffer ) {
-    sound.setBuffer( buffer );
-    sound.setLoop(true);
-    sound.setVolume(0.5);
-    sound.play();
-  });
+  // const audioLoader = new THREE.AudioLoader();
+  // audioLoader.load( 'music/dungeon.mp3', function( buffer ) {
+  //   sound.setBuffer( buffer );
+  //   sound.setLoop(true);
+  //   sound.setVolume(0.5);
+  //   sound.play();
+  // });
 
-  let activated = false;
-  let activateCb = null;
+  // let activated = false;
+  // let activateCb = null;
   const audioTrackInformation = {
     source: baseUrl + 'music/dungeon.mp3',
     autoPlay: true,
@@ -73,17 +73,17 @@ export default () => {
       }
     }
   }
-  activateCb = () => {
-    activated = !activated;
+  // activateCb = () => {
+  //   activated = !activated;
 
-    if (activated) {
-       audio.play();
+  //   if (activated) {
+  //      audio.play();
       
-      _shake();
-    } else {
-      audio.pause();
-    }
-  };
+  //     _shake();
+  //   } else {
+  //     audio.pause();
+  //   }
+  // };
 
   //screen shake method for heavy bass
   // const {animations} = o;
