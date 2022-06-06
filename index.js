@@ -91,7 +91,7 @@ export default () => {
     const {gltfLoader} = useLoaders();
     gltfLoader.load(u, accept, function onprogress() {}, reject);
   });
-
+  console.log(audioTrackInformation);
   const physicsId = physics.addGeometry(o);
   physicsIds.push(physicsId);
   })();
