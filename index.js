@@ -34,17 +34,18 @@ export default () => {
 
 
 
-  // const audioTrackInformation = {
-  //   source: baseUrl + 'music/dungeon.mp3',
-  //   autoPlay: true,
-  // }
+  const audioTrackInformation = {
+    source: baseUrl + 'music/dungeon.mp3',
+    autoPlay: true,
+  }
 
   // seperate controls for testing
   //get music ->CLEAN
   document.body.onkeyup = (e) => {
     if (e.code === 'Digit1') {
       audio = getAudio({ createOnCall: false })
-      createAudio(audioTrackInformation)
+      createAudio(audioTrackInformation);
+      console.log("get audio");
     }
   }
   //play  ->CLEAN
@@ -52,8 +53,8 @@ export default () => {
     if (e.code === 'Digit2') {
         if (audio.paused) {
           audio.play()
+          console.log("play audio");
         }
-      createAudio(audioTrackInformation)
     }
   }
   //pause music ->CLEAN
@@ -61,8 +62,8 @@ export default () => {
     if (e.code === 'Digit3') {
       if (audio.paused !== undefined) {
           audio.pause()
+          console.log("pause audio");
       }
-      createAudio(audioTrackInformation)
     }
   }
 
