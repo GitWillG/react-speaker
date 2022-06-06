@@ -31,7 +31,13 @@ export default () => {
   // for screenshake later
   //const cameraManager = useCameraManager();
 
-
+  const audioLoader = new THREE.AudioLoader();
+  audioLoader.load( 'music/dungeon.mp3', function( buffer ) {
+    sound.setBuffer( buffer );
+    sound.setLoop(true);
+    sound.setVolume(0.5);
+    sound.play();
+  });
 
 
   const audioTrackInformation = {
