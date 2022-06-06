@@ -108,10 +108,11 @@ export default () => {
     const {gltfLoader} = useLoaders();
     gltfLoader.load(u, accept, function onprogress() {}, reject);
   });
-  console.log(audioTrackInformation);
+  console.log("glb data", o);
   const physicsId = physics.addGeometry(o);
   physicsIds.push(physicsId);
   })();
+  
   
   //cleanup
   useCleanup(() => {
