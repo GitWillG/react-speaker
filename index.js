@@ -39,7 +39,8 @@ export default () => {
     sound.play();
   });
 
-
+  let activated = false;
+  let activateCb = null;
   const audioTrackInformation = {
     source: baseUrl + 'music/dungeon.mp3',
     autoPlay: true,
@@ -72,7 +73,17 @@ export default () => {
       }
     }
   }
+  activateCb = () => {
+    activated = !activated;
 
+    if (activated) {
+       audio.play();
+      
+      _shake();
+    } else {
+      audio.pause();
+    }
+  };
 
   //screen shake method for heavy bass
   // const {animations} = o;
