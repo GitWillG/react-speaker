@@ -41,7 +41,7 @@ export default () => {
     const {gltfLoader} = useLoaders();
     gltfLoader.load(u, accept, function onprogress() {}, reject);
   });
-  console.log("glb data", o);
+  console.log("glb data", o.morphTargets, o);
   const physicsId = physics.addGeometry(o);
   physicsIds.push(physicsId);
   })();
