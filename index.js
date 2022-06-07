@@ -23,84 +23,11 @@ let beatFactorHi;
 let audio;
 let elapsedTime;
 
-export default (e) => {
+export default () => {
   const app = useApp()
   app.name = 'react-Speaker'
   const physics = usePhysics();
   
-
-  
-  const loadModel = (params) => {
-    return new Promise((resolve, reject) => {
-      const { gltfLoader } = useLoaders()
-      const { dracoLoader } = useLoaders()
-      gltfLoader.setDRACOLoader(dracoLoader).setCrossOrigin('anonymous')
-
-      gltfLoader.load(params.filePath + params.fileName, (gltf) => {
-        gltf.scene.traverse((child) => {
-          if (child.isMesh) {
-            if (child.material.name === 'Woofer'){
-              console.log("found mesh");
-
-            }
-
-          }
-        })
-        const physicsId = physics.addGeometry(gltf.scene)
-        physicsIds.push(physicsId)
-        // gltf.scene.position.set(0, 0, 0)
-        // gltf.scene.rotation.set(Math.PI, 0, 0)
-        // gltf.scene.updateMatrixWorld()
-        resolve(gltf.scene)
-      })
-    })
-  }
-  const speakerInfo = {
-    fileName: 'react-Speaker.glb',
-    filePath: baseUrl,
-  }
-  const reactSpeaker = loadModel(speakerInfo)
-
-  Promise.all([reactSpeaker]).then((values) => {
-    values.forEach((model) => {
-      app.add(model)
-    })
-  })
-
-     //cleanup
-  useCleanup(() => {
-    // composer.removePass(finalPass)
-    // composer.removePass(earthquakePass)
-    for (const physicsId of physicsIds) {
-      physics.removeGeometry(physicsId)
-    }
-  })
-    return app; 
-  
-}
-
-
-//  // ->CLEAN
-//  let physicsIds = [];
-//  (async () => {
-//   const u = `${baseUrl}react-Speaker.glb`;
-//   let o = await new Promise((accept, reject) => {
-//     const {gltfLoader} = useLoaders();
-//     gltfLoader.load(u, accept, function onprogress() {}, reject);
-//   });
-//   console.log("glb data", o);
-  
-//   const physicsId = physics.addGeometry(o);
-//   physicsIds.push(physicsId);
-//   })();
-  
-  
- 
-//   // return app
-//   // };
-
-
-
    // for screenshake later
   //const cameraManager = useCameraManager();
 
@@ -164,3 +91,37 @@ export default (e) => {
   // const _shake = () => {
   //   _shake()
   // }
+ 
+  
+ 
+  
+ // ->CLEAN
+ let physicsIds = [];
+ (async () => {
+  const u = `${baseUrl}react-Speaker.glb`;
+  let o = await new Promise((accept, reject) => {
+    const {gltfLoader} = useLoaders();
+    gltfLoader.load(u, accept, function onprogress() {}, reject);
+  });
+  console.log("glb data", o);
+  
+  const physicsId = physics.addGeometry(o);
+  physicsIds.push(physicsId);
+  })();
+  
+  
+  //cleanup
+  useCleanup(() => {
+    // composer.removePass(finalPass)
+    // composer.removePass(earthquakePass)
+    for (const physicsId of physicsIds) {
+      physics.removeGeometry(physicsId)
+    }
+  })
+  // return app
+  // };
+  return app; 
+};
+
+
+
