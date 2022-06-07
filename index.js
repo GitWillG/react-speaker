@@ -57,7 +57,7 @@ export default (e) => {
   }
   const speakerInfo = {
     fileName: 'react-Speaker.glb',
-    filePath: baseUrl + '/',
+    filePath: baseUrl,
   }
   const reactSpeaker = loadModel(speakerInfo)
 
