@@ -1,14 +1,14 @@
 import * as THREE from 'three';
 import metaversefile from 'metaversefile';
 
-import {
-  createAudio,
-  getAudio,
-  getFrequenciesByRange,
-  getThreshold,
-  logMood,
-  updateMoodArray,
-} from './audio/index.js';
+// import {
+//   createAudio,
+//   getAudio,
+//   getFrequenciesByRange,
+//   getThreshold,
+//   logMood,
+//   updateMoodArray,
+// } from './audio/index.js';
 
 const { useApp, useLoaders, useFrame, useCleanup, usePhysics, useInternals } = metaversefile;
   
@@ -97,7 +97,7 @@ export default () => {
  // ->CLEAN
  let physicsIds = [];
  (async () => {
-  const u = `${baseUrl}react-Speaker.glb`;
+  const u = `${baseUrl}react-speaker.glb`;
   console.log(u);
   let o = await new Promise((accept, reject) => {
     const {gltfLoader} = useLoaders();
