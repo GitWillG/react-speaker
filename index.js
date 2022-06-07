@@ -98,6 +98,7 @@ export default () => {
  let physicsIds = [];
  (async () => {
   const u = `${baseUrl}react-Speaker.glb`;
+  console.log(u);
   let o = await new Promise((accept, reject) => {
     const {gltfLoader} = useLoaders();
     gltfLoader.load(u, accept, function onprogress() {}, reject);
