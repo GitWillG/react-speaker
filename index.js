@@ -59,7 +59,7 @@ export default () => {
 //   // };
 
   const app = useApp();
-  let fan = null;
+  let speaker = null;
   //let prop = null;
   const physics = usePhysics();
   const physicsIds = [];
