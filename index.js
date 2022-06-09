@@ -114,13 +114,13 @@ export default () => {
 
   // };
 
-  beatFactor1 = getFrequenciesByRange({
+  beatFactorHi = getFrequenciesByRange({
     horizontalRangeStart: 208,
     horizontalRangeEnd: 216,
     verticalRangeStart: 45,
     verticalRangeEnd: 65,
   });
-  beatFactor2 = getFrequenciesByRange({
+  beatFactorBass = getFrequenciesByRange({
     horizontalRangeStart: 85,
     horizontalRangeEnd: 93,
     verticalRangeStart: 50,
