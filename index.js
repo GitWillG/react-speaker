@@ -47,8 +47,10 @@ export default () => {
       speaker.scene.traverse(o => {
         if (o.isMesh) {
           console.log(o);
+          reactWoofer = o.morphTargetDictionary[0];
+          reactMid = o.morphTargetDictionary[1];
         }
-        if(o.name === 'Woofer') {  console.log("found woofer") }
+      //   if(o.name === 'Woofer') {  console.log("found woofer") }
       });
       //fan.scene.position.y=1;
       //fan.scene.rotation.x = Math.PI/2;
@@ -71,8 +73,6 @@ export default () => {
 
       // update world
       app.updateMatrixWorld();
-      reactWoofer = o.morphTargetDictionary[0];
-      reactMid = o.morphTargetDictionary[1];
       console.log("woofer", reactWoofer, "mid", reactMid)
 
   })();
