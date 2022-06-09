@@ -47,7 +47,6 @@ export default () => {
       speaker.scene.traverse(o => {
         if (o.isMesh) {
           console.log(o);
-          console.log(o.morphTargetDictionary);
         }
         if(o.name === 'Woofer') {  console.log("found woofer") }
       });
@@ -72,10 +71,12 @@ export default () => {
 
       // update world
       app.updateMatrixWorld();
-
+      reactWoofer = o.morphTargetDictionary[0];
+      reactMid = o.morphTargetDictionary[1];
+      console.log("woofer", reactWoofer, "mid", reactMid)
 
   })();
-  speaker.
+  
 
   //  // creating audio with space bar click
   //  const audioTrackInformation = {
