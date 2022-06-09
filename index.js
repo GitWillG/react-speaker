@@ -103,16 +103,18 @@ export default () => {
       createAudio(audioTrackInformation)
     }
   };
+  useFrame(({ timestamp }) => {
   elapsedTime = timestamp;
   const threshold = getThreshold();
-  // logAudio(); {
-  //   // if(){
+  if (beatFactorBass){
+    reactWoofer = beatFactorBass;
+  };
 
-  //   // }
+  if (beatFactorHi){
+    reactMid = reactMid;
+  };
 
 
-
-  // };
 
   beatFactorHi = getFrequenciesByRange({
     horizontalRangeStart: 208,
@@ -127,7 +129,7 @@ export default () => {
     verticalRangeEnd: 70,
   });
 
-  
+});
   useCleanup(() => {
     for (const physicsId of physicsIds) {
       physics.removeGeometry(physicsId);
