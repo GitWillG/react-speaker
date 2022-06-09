@@ -80,7 +80,7 @@ export default () => {
     source: baseUrl + 'music/dungeon.mp3',
     autoPlay: true,
     // currentTime: 100.2,
-  }
+  };
 
   // play the ^above audio or pause it
   document.body.onkeyup = (e) => {
@@ -97,11 +97,9 @@ export default () => {
       }
       createAudio(audioTrackInformation)
     }
-  }
+  };
 
-  logAudio(){
 
-  }
 
   
   useCleanup(() => {
