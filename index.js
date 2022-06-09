@@ -112,8 +112,9 @@ export default () => {
 
 
   // };
-
+  if (reactWoofer){
   console.log(beatFactor1, reactWoofer, beatFactor2, reactMid);
+  };
   beatFactor1 = getFrequenciesByRange({
     horizontalRangeStart: 208,
     horizontalRangeEnd: 216,
