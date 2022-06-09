@@ -132,16 +132,16 @@ export default () => {
 
   //some presets for low and hi frequencies
   beatFactorHi = getFrequenciesByRange({
-    horizontalRangeStart: 180,
-    horizontalRangeEnd: 240,
-    verticalRangeStart: 50,
-    verticalRangeEnd: 150,
+    horizontalRangeStart: 100,
+    horizontalRangeEnd: 108,
+    verticalRangeStart: 140,
+    verticalRangeEnd: 170,
   });
   beatFactorBass = getFrequenciesByRange({
-    horizontalRangeStart: 90,
-    horizontalRangeEnd: 150,
-    verticalRangeStart: 50,
-    verticalRangeEnd: 150,
+    horizontalRangeStart: 65,
+    horizontalRangeEnd: 90,
+    verticalRangeStart: 60,
+    verticalRangeEnd: 100,
   });
 
 });
