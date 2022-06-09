@@ -1,14 +1,14 @@
 import * as THREE from 'three';
 import metaversefile from 'metaversefile';
 
-// import {
-//   createAudio,
-//   getAudio,
-//   getFrequenciesByRange,
-//   getThreshold,
-//   logMood,
-//   updateMoodArray,
-// } from './audio/index.js';
+import {
+  createAudio,
+  getAudio,
+  getFrequenciesByRange,
+  getThreshold,
+  logMood,
+  updateMoodArray,
+} from './audio/index.js';
 
 const { useApp, useLoaders, useFrame, useCleanup, usePhysics, useInternals } = metaversefile;
   
