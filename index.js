@@ -49,7 +49,7 @@ export default () => {
           // o.morphTargetInfluences[0] = 1;
           reactWoofer = o.morphTargetInfluences[0];
           reactMid = o.morphTargetInfluences[1];
-          console.log(o);
+          console.log(reactMid.isBufferGeometry);
         }
       //   if(o.name === 'Woofer') {  console.log("found woofer") }
       });
