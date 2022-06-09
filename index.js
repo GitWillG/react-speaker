@@ -46,9 +46,9 @@ export default () => {
 
       speaker.scene.traverse(o => {
         if (o.isMesh) {
-          o.morphTargetInfluences[0] = 1;
-          // reactWoofer = o.morphTargetDictionary[0];
-          // reactMid = o.morphTargetDictionary[1];
+          // o.morphTargetInfluences[0] = 1;
+          reactWoofer = o.morphTargetInfluences[0];
+          reactMid = o.morphTargetInfluences[1];
           console.log(o);
         }
       //   if(o.name === 'Woofer') {  console.log("found woofer") }
@@ -102,14 +102,30 @@ export default () => {
       createAudio(audioTrackInformation)
     }
   };
-  elapsedTime = timestamp
-  const threshold = getThreshold()
-  // logAudio(){
+  elapsedTime = timestamp;
+  const threshold = getThreshold();
+  logAudio(){
+    // if(){
+    console.log(beatFactor1, reactWoofer, beatFactor2, reactMid);
+
+    // }
 
 
-  // }
 
+  };
 
+  beatFactor1 = getFrequenciesByRange({
+    horizontalRangeStart: 208,
+    horizontalRangeEnd: 216,
+    verticalRangeStart: 45,
+    verticalRangeEnd: 65,
+  });
+  beatFactor2 = getFrequenciesByRange({
+    horizontalRangeStart: 85,
+    horizontalRangeEnd: 93,
+    verticalRangeStart: 50,
+    verticalRangeEnd: 70,
+  });
 
   
   useCleanup(() => {
