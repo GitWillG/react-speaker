@@ -44,13 +44,13 @@ export default () => {
       });
 
 
-      speaker.scene.traverse(o => {
-        if (o.isMesh) {
-          // o.morphTargetInfluences[0] = 1;
-          reactWoofer = o.morphTargetInfluences[0];
-          reactMid = o.morphTargetInfluences[1];
-          console.log(o.morphTargetInfluences[0]);
-        }
+      // speaker.scene.traverse(o => {
+      //   if (o.isMesh) {
+      //     // o.morphTargetInfluences[0] = 1;
+      //     reactWoofer = o.morphTargetInfluences[0];
+      //     reactMid = o.morphTargetInfluences[1];
+      //     console.log(o.morphTargetInfluences[0]);
+      //   }
       //   if(o.name === 'Woofer') {  console.log("found woofer") }
       });
       //fan.scene.position.y=1;
@@ -111,16 +111,17 @@ export default () => {
   // apply the factors to the morphs
   if (beatFactorBass){
     reactWoofer = beatFactorBass;
+    // console.log(reactWoofer);
 
   };
   if (beatFactorHi){
     reactMid = beatFactorHi;
-    console.log(reactMid);
+    // console.log(reactMid);
   };
   // console.log(speaker.scene.isMesh());
   speaker.scene.traverse(o => {
     if (o.isMesh) {
-      o.morphTargetInfluences[o] = reactWoofer;
+      o.morphTargetInfluences[0] = reactWoofer;
       o.morphTargetInfluences[1] = reactMid;
       console.log(reactWoofer, o.morphTargetInfluences[0], reactMid, o.morphTargetInfluences[1]);
     }
