@@ -139,7 +139,7 @@ export const updateAudioThreshold = (frequencyData) => {
   if (threshold < 200) {
     mood = 'superHigh'
   }
-  console.log(mood);
+  //console.log(mood);
 }
 
 export const updateMoodArray = () => {
