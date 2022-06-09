@@ -30,7 +30,7 @@ export default () => {
 
   // declare the app and speaker, as well as physics
   const app = useApp();
-  let speaker = null;
+  let speaker = new THREE.Object3D();
   //let prop = null;
   const physics = usePhysics();
   const physicsIds = [];
@@ -74,7 +74,7 @@ export default () => {
 
       // update world
       app.updateMatrixWorld();
-      console.log("woofer", reactWoofer, "mid", reactMid)
+      console.log(speaker.scene, speaker)
 
   })();
   
@@ -117,7 +117,7 @@ export default () => {
     reactMid = beatFactorHi;
     console.log(reactMid);
   };
-  console.log(speaker.scene.isMesh());
+  // console.log(speaker.scene.isMesh());
   speaker.scene.traverse(o => {
     if (o.isMesh) {
       o.morphTargetInfluences[o] = reactWoofer;
