@@ -108,10 +108,12 @@ export default () => {
   const threshold = getThreshold();
   if (beatFactorBass){
     reactWoofer = beatFactorBass;
+    console.log(beatFactorBass);
   };
 
   if (beatFactorHi){
     reactMid = reactMid;
+    console.log(beatFactorHi);
   };
 
 
