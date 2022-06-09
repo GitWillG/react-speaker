@@ -111,7 +111,7 @@ export default () => {
   // apply the factors to the morphs
   if (beatFactorBass){
     reactWoofer = beatFactorBass;
-    console.log(reactWoofer);
+    console.log(reactWoofer, speaker.scene.morphTargetInfluences);
   };
   if (beatFactorHi){
     reactMid = reactMid;
