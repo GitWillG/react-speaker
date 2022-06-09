@@ -117,11 +117,12 @@ export default () => {
     reactMid = beatFactorHi;
     console.log(reactMid);
   };
+  console.log(speaker.scene.isMesh());
   speaker.scene.traverse(o => {
     if (o.isMesh) {
       o.morphTargetInfluences[o] = reactWoofer;
       o.morphTargetInfluences[1] = reactMid;
-      console.log(reactWoofer, o.morphTargetInfluences[0]), reactMid, o.morphTargetInfluences[1];
+      console.log(reactWoofer, o.morphTargetInfluences[0], reactMid, o.morphTargetInfluences[1]);
     }
   })
   //speaker.updateMatrix();
