@@ -101,10 +101,10 @@ export default () => {
   };
   elapsedTime = timestamp
   const threshold = getThreshold()
-  logAudio(){
+  // logAudio(){
 
 
-  }
+  // }
 
 
 
