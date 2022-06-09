@@ -104,16 +104,16 @@ export default () => {
   };
   elapsedTime = timestamp;
   const threshold = getThreshold();
-  logAudio(){
-    // if(){
-    console.log(beatFactor1, reactWoofer, beatFactor2, reactMid);
+  // logAudio(); {
+  //   // if(){
 
-    // }
-
+  //   // }
 
 
-  };
 
+  // };
+
+  console.log(beatFactor1, reactWoofer, beatFactor2, reactMid);
   beatFactor1 = getFrequenciesByRange({
     horizontalRangeStart: 208,
     horizontalRangeEnd: 216,
