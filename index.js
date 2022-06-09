@@ -18,6 +18,7 @@ let reactWoofer;
 let reactMid;
 
 let beatFactorBass;
+let beatFactorSuperLow;
 let beatFactorHi;
 let audio;
 let elapsedTime;
@@ -138,11 +139,19 @@ export default () => {
     verticalRangeEnd: 170,
   });
   beatFactorBass = getFrequenciesByRange({
-    horizontalRangeStart: 65,
-    horizontalRangeEnd: 90,
+    horizontalRangeStart: 40,
+    horizontalRangeEnd: 80,
     verticalRangeStart: 60,
     verticalRangeEnd: 100,
   });
+  // shake based off this
+  beatFactorSuperLow = getFrequenciesByRange({
+    horizontalRangeStart: 65,
+    horizontalRangeEnd: 80,
+    verticalRangeStart: 60,
+    verticalRangeEnd: 100,
+  });
+
 
 });
   useCleanup(() => {
