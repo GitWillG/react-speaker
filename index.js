@@ -78,18 +78,18 @@ export default () => {
   })();
   
 
-  //  // creating audio with space bar click
-  //  const audioTrackInformation = {
-  //   source: baseUrl + 'music/dungeon.mp3',
-  //   autoPlay: true,
-  //   // currentTime: 100.2,
-  // };
+   // creating audio with space bar click
+   const audioTrackInformation = {
+    source: baseUrl + 'music/dungeon.mp3',
+    autoPlay: true,
+    // currentTime: 100.2,
+  };
 
   // play the ^above audio or pause it
   document.body.onkeyup = (e) => {
     if (e.code === 'Digit1') {
       const audio = getAudio({ createOnCall: false })
-      console.log("m pressed"), audio;
+      console.log("m pressed", audio);
       if (audio.paused !== undefined) {
         if (audio.paused) {
           audio.play()
