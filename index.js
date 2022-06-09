@@ -103,21 +103,25 @@ export default () => {
       createAudio(audioTrackInformation)
     }
   };
+  // run on update
   useFrame(({ timestamp }) => {
   elapsedTime = timestamp;
   const threshold = getThreshold();
+
+  // apply the factors to the morphs
   if (beatFactorBass){
     reactWoofer = beatFactorBass;
-    console.log(beatFactorBass);
+    console.log(reactWoofer);
   };
-
   if (beatFactorHi){
     reactMid = reactMid;
-    console.log(beatFactorHi);
+    console.log(reactMid);
   };
+  speaker.updateMatrix();
 
+  //app.updateMatrixWorld();
 
-
+  //some presets for low and hi frequencies
   beatFactorHi = getFrequenciesByRange({
     horizontalRangeStart: 208,
     horizontalRangeEnd: 216,
