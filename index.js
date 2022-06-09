@@ -44,12 +44,12 @@ export default () => {
       });
 
 
-      // fan.scene.traverse(o => {
-      //   // if (o.isMesh) {
-      //   //   console.log(o);
-      //   // }
-      //   if(o.name === 'Plane001') {  prop = o; }
-      // });
+      speaker.scene.traverse(o => {
+        if (o.isMesh) {
+          console.log(o);
+        }
+        if(o.name === 'Woofer') {  console.log("found woofer") }
+      });
       //fan.scene.position.y=1;
       //fan.scene.rotation.x = Math.PI/2;
       // group.add(fan.scene);
@@ -59,7 +59,7 @@ export default () => {
       app.add(speaker.scene);
       let physicsId;
       physicsId = physics.addGeometry(speaker.scene);
-      physicsIds.push(physicsId)
+      physicsIds.push(physicsId);
 
 
       // const geometry = new THREE.CircleGeometry( 1, 32 );
@@ -74,13 +74,14 @@ export default () => {
 
 
   })();
+  speaker.
 
-   // creating audio with space bar click
-   const audioTrackInformation = {
-    source: baseUrl + 'music/dungeon.mp3',
-    autoPlay: true,
-    // currentTime: 100.2,
-  };
+  //  // creating audio with space bar click
+  //  const audioTrackInformation = {
+  //   source: baseUrl + 'music/dungeon.mp3',
+  //   autoPlay: true,
+  //   // currentTime: 100.2,
+  // };
 
   // play the ^above audio or pause it
   document.body.onkeyup = (e) => {
@@ -98,6 +99,12 @@ export default () => {
       createAudio(audioTrackInformation)
     }
   };
+  elapsedTime = timestamp
+  const threshold = getThreshold()
+  logAudio(){
+
+
+  }
 
 
 
