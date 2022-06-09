@@ -99,7 +99,7 @@ export default () => {
           console.log("paused");
         }
       }
-      console.log(beatFactor1, reactWoofer, beatFactor2, reactMid);
+      console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
       createAudio(audioTrackInformation)
     }
   };
