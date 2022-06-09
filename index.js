@@ -52,7 +52,7 @@ export default () => {
       //     console.log(o.morphTargetInfluences[0]);
       //   }
       //   if(o.name === 'Woofer') {  console.log("found woofer") }
-      });
+      // });
       //fan.scene.position.y=1;
       //fan.scene.rotation.x = Math.PI/2;
       // group.add(fan.scene);
@@ -74,7 +74,7 @@ export default () => {
 
       // update world
       app.updateMatrixWorld();
-      console.log(speaker.scene, speaker)
+      console.log(speaker.scene, speaker);
 
   })();
   
