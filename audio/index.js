@@ -33,7 +33,7 @@ export const createAudio = ({ source, volume, autoPlay, currentTime }) => {
   if (!audioHasBeenCreated) {
     audio = new Audio()
     console.log('Audio is created')
-    constole.log(autoPlay);
+    console.log(autoPlay);
     audio.src =
       'https://res.cloudinary.com/musixdevelop/video/upload/track-audios/Sad.mp3'
     // audio.src =
