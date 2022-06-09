@@ -49,7 +49,7 @@ export default () => {
           // o.morphTargetInfluences[0] = 1;
           reactWoofer = o.morphTargetInfluences[0];
           reactMid = o.morphTargetInfluences[1];
-          console.log(reactMid.isBufferGeometry);
+          console.log(o.morphTargetInfluences[0]);
         }
       //   if(o.name === 'Woofer') {  console.log("found woofer") }
       });
@@ -112,7 +112,9 @@ export default () => {
   if (beatFactorBass){
     reactWoofer = beatFactorBass;
     speaker.scene.traverse(o => {
+      if (o.isMesh) {
     console.log(reactWoofer, o.morphTargetInfluences[0]);
+      }
     })
   };
   if (beatFactorHi){
