@@ -127,6 +127,10 @@ export default () => {
       console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
     }
   })
+  //Add shake
+  if (beatFactorSuperLow === 1){
+
+  }
   //speaker.updateMatrix();
 
   //app.updateMatrixWorld();
@@ -142,7 +146,7 @@ export default () => {
     horizontalRangeStart: 30,
     horizontalRangeEnd: 60,
     verticalRangeStart: 60,
-    verticalRangeEnd: 100,
+    verticalRangeEnd: 140,
   });
   // shake based off this
   beatFactorSuperLow = getFrequenciesByRange({
