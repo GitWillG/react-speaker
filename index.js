@@ -111,16 +111,19 @@ export default () => {
   // apply the factors to the morphs
   if (beatFactorBass){
     reactWoofer = beatFactorBass;
-    speaker.scene.traverse(o => {
-      if (o.isMesh) {
-    console.log(reactWoofer, o.morphTargetInfluences[0]);
-      }
-    })
+
   };
   if (beatFactorHi){
-    reactMid = reactMid;
+    reactMid = beatFactorHi;
     console.log(reactMid);
   };
+  speaker.scene.traverse(o => {
+    if (o.isMesh) {
+      o.morphTargetInfluences[o] = reactWoofer;
+      o.morphTargetInfluences[1] = reactMid;
+      console.log(reactWoofer, o.morphTargetInfluences[0]), reactMid, o.morphTargetInfluences[1];
+    }
+  })
   //speaker.updateMatrix();
 
   //app.updateMatrixWorld();
