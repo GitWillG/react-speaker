@@ -46,9 +46,10 @@ export default () => {
 
       speaker.scene.traverse(o => {
         if (o.isMesh) {
+          o.morphTargetInfluences[0] = 1;
+          // reactWoofer = o.morphTargetDictionary[0];
+          // reactMid = o.morphTargetDictionary[1];
           console.log(o);
-          reactWoofer = o.morphTargetDictionary[0];
-          reactMid = o.morphTargetDictionary[1];
         }
       //   if(o.name === 'Woofer') {  console.log("found woofer") }
       });
@@ -80,7 +81,7 @@ export default () => {
 
    // creating audio with space bar click
    const audioTrackInformation = {
-    source: baseUrl + 'music/dungeon.mp3',
+    source: 'https://res.cloudinary.com/musixdevelop/video/upload/track-audios/Sad.mp3',
     autoPlay: true,
     // currentTime: 100.2,
   };
