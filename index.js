@@ -124,7 +124,7 @@ export default () => {
     if (o.isMesh) {
       o.morphTargetInfluences[0] = reactWoofer;
       o.morphTargetInfluences[1] = reactMid;
-      console.log(reactWoofer, o.morphTargetInfluences[0], reactMid, o.morphTargetInfluences[1]);
+      console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
     }
   })
   //speaker.updateMatrix();
@@ -133,23 +133,23 @@ export default () => {
 
   //some presets for low and hi frequencies
   beatFactorHi = getFrequenciesByRange({
-    horizontalRangeStart: 100,
+    horizontalRangeStart: 80,
     horizontalRangeEnd: 108,
     verticalRangeStart: 140,
     verticalRangeEnd: 170,
   });
   beatFactorBass = getFrequenciesByRange({
-    horizontalRangeStart: 40,
-    horizontalRangeEnd: 80,
+    horizontalRangeStart: 30,
+    horizontalRangeEnd: 60,
     verticalRangeStart: 60,
     verticalRangeEnd: 100,
   });
   // shake based off this
   beatFactorSuperLow = getFrequenciesByRange({
-    horizontalRangeStart: 65,
-    horizontalRangeEnd: 80,
+    horizontalRangeStart: 25,
+    horizontalRangeEnd: 40,
     verticalRangeStart: 60,
-    verticalRangeEnd: 100,
+    verticalRangeEnd: 120,
   });
 
 
