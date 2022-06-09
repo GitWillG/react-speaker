@@ -30,7 +30,7 @@ export default () => {
 
   // declare the app and speaker, as well as physics
   const app = useApp();
-  let speaker = null;
+  let speaker = new THREE.Object3D();
   //let prop = null;
   const physics = usePhysics();
   const physicsIds = [];
