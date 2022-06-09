@@ -30,7 +30,7 @@ export default () => {
 
   // declare the app and speaker, as well as physics
   const app = useApp();
-  let speaker = new THREE.Object3D();
+  let speaker = null;
   //let prop = null;
   const physics = usePhysics();
   const physicsIds = [];
@@ -47,6 +47,7 @@ export default () => {
       speaker.scene.traverse(o => {
         if (o.isMesh) {
           console.log(o);
+          console.log(o.morphTargetDictionary);
         }
         if(o.name === 'Woofer') {  console.log("found woofer") }
       });
