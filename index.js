@@ -62,7 +62,7 @@ export default () => {
 
       // scale and insert into scene
       speaker.scene.scale.set(1,1,1);
-      speaker.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), Math.Pi)
+      speaker.scene.rotation.y = Math.PI;
       app.add(speaker.scene);
       let physicsId;
       physicsId = physics.addGeometry(speaker.scene);
@@ -90,12 +90,12 @@ export default () => {
     // currentTime: 100.2,
   };
 
-  function shakeFunc(){
-    screenShake.update(camera);
+  // function shakeFunc(){
+  //   screenShake.update(camera);
 
-    requestAnimationFrame( loop );
-    renderer.render( scene, camera );
-  }
+  //   requestAnimationFrame( loop );
+  //   renderer.render( scene, camera );
+  // }
 
   // play the ^above audio or pause it
   document.body.onkeyup = (e) => {
