@@ -9,6 +9,7 @@ import {
   logMood,
   updateMoodArray,
 } from './audio/index.js';
+import { Vector3 } from 'three';
 
 const { useApp, useLoaders, useFrame, useCleanup, usePhysics, useInternals } = metaversefile;
   
@@ -24,11 +25,12 @@ let audio;
 let elapsedTime;
 let buffer;
 let mid;
+
 let morphTargets =[];
 
 export default () => {
 
-
+  var screenShake = ScreenShake();
   // declare the app and speaker, as well as physics
   const app = useApp();
   let speaker = new THREE.Object3D();
@@ -60,6 +62,7 @@ export default () => {
 
       // scale and insert into scene
       speaker.scene.scale.set(1,1,1);
+      speaker.setRotationFromAxisAngle(new THREE.Vector3(0,1,0), Math.Pi)
       app.add(speaker.scene);
       let physicsId;
       physicsId = physics.addGeometry(speaker.scene);
@@ -86,6 +89,13 @@ export default () => {
     autoPlay: true,
     // currentTime: 100.2,
   };
+
+  function shakeFunc(){
+    screenShake.update(camera);
+
+    requestAnimationFrame( loop );
+    renderer.render( scene, camera );
+  }
 
   // play the ^above audio or pause it
   document.body.onkeyup = (e) => {
