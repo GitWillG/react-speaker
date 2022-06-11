@@ -29,7 +29,7 @@ let morphTargets =[];
 
 export default () => {
 
-  var screenShake = ScreenShake();
+  // var screenShake = ScreenShake();
   // declare the app and speaker, as well as physics
   const app = useApp();
   let speaker = new THREE.Object3D();
@@ -88,12 +88,12 @@ export default () => {
     // currentTime: 100.2,
   };
 
-  function shakeFunc(){
-    screenShake.update(camera);
+  // function shakeFunc(){
+  //   screenShake.update(camera);
 
-    requestAnimationFrame( loop );
-    renderer.render( scene, camera );
-  }
+  //   requestAnimationFrame( loop );
+  //   renderer.render( scene, camera );
+  // }
 
   // play the ^above audio or pause it
   document.body.onkeyup = (e) => {
