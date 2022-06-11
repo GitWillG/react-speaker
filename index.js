@@ -62,7 +62,7 @@ export default () => {
 
       // scale and insert into scene
       speaker.scene.scale.set(1,1,1);
-      speaker.scene.rotation.y = Math.PI;
+      //speaker.scene.rotation.y = Math.PI;
       app.add(speaker.scene);
       let physicsId;
       physicsId = physics.addGeometry(speaker.scene);
@@ -78,7 +78,7 @@ export default () => {
 
       // update world
       app.updateMatrixWorld();
-      console.log(speaker.scene, speaker);
+      // console.log(speaker.scene, speaker);
 
   })();
   
@@ -110,7 +110,7 @@ export default () => {
           console.log("paused");
         }
       }
-      console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
+      // console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
       createAudio(audioTrackInformation)
     }
   };
@@ -134,7 +134,7 @@ export default () => {
     if (o.isMesh) {
       o.morphTargetInfluences[0] = reactWoofer;
       o.morphTargetInfluences[1] = reactMid;
-      console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
+      // console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
     }
   })
   //Add shake
