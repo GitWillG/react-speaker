@@ -70,11 +70,27 @@ export default () => {
   // })();
   const loadSpeakers = (params, pos) =>{
     const u = params.filePath + params.fileName;
-    speaker = new Promise((accept, reject) => {
+    return new Promise((resolve, reject) => {
         const {gltfLoader} = useLoaders();
-        gltfLoader.load(u, accept, function onprogress() {}, reject);
+        gltfLoader.load(u,(speaker) =>{
+          
+          speaker.scene.scale.set(params.obScale);
+          speaker.scene.position.set(pos);
+          speaker.scene.quaternion.set(obQuarternion);
+          app.add(speaker.scene);
+          let physicsId;
+          physicsId = physics.addGeometry(speaker.scene);
+          physicsIds.push(physicsId);
+
+
+          // update world
+          app.updateMatrixWorld();
+          resolve(speaker.scene)
+    
+
+        })
         
-  });
+    });
     // speaker.scene.traverse(o => {
     //   if (o.isMesh) {
     //     // o.morphTargetInfluences[0] = 1;
@@ -85,17 +101,6 @@ export default () => {
     //   if(o.name === 'Woofer') {  console.log("found woofer") }
     // });
     // scale and insert into scene
-    speaker.scene.scale.set(params.obScale);
-    speaker.scene.position.set(pos);
-    speaker.scene.quaternion.set(obQuarternion);
-    app.add(speaker.scene);
-    let physicsId;
-    physicsId = physics.addGeometry(speaker.scene);
-    physicsIds.push(physicsId);
-
-
-    // update world
-    app.updateMatrixWorld();
     
   }
   
