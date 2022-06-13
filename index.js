@@ -73,10 +73,10 @@ export default () => {
     return new Promise((resolve, reject) => {
         const {gltfLoader} = useLoaders();
         gltfLoader.load(u,(speaker) =>{
-          
+
           speaker.scene.scale.set(params.obScale);
           speaker.scene.position.set(pos);
-          speaker.scene.quaternion.set(obQuarternion);
+          speaker.scene.quaternion.set(params.obQuarternion);
           app.add(speaker.scene);
           let physicsId;
           physicsId = physics.addGeometry(speaker.scene);
