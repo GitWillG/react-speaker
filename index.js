@@ -100,7 +100,7 @@ export default () => {
   }
   
   const speakerInfo ={
-    fileName: 'react-Speaker.glb',
+    fileName: 'react-speaker.glb',
     filePath: baseUrl,
     obQuarternion: new THREE.Vector4(0,1,0,0),
     obScale: new THREE.Vector3(4,4,4),
