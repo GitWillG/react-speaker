@@ -61,10 +61,13 @@ export default () => {
 
       // scale and insert into scene
       speaker.scene.scale.set(4,4,4);
+      speaker.scene.position.set( 15, 0, 10);
+      speaker.scene.quaternion.set(0,1,0,0);
       app.add(speaker.scene);
       let physicsId;
       physicsId = physics.addGeometry(speaker.scene);
       physicsIds.push(physicsId);
+
 
 
       // const geometry = new THREE.CircleGeometry( 1, 32 );
@@ -97,20 +100,20 @@ export default () => {
 
   // play the ^above audio or pause it
   document.body.onkeyup = (e) => {
-    // if (e.code === 'Digit1') {
-    //   const audio = getAudio({ createOnCall: false })
-    //   console.log("m pressed", audio);
-    //   if (audio.paused !== undefined) {
-    //     if (audio.paused) {
-    //       audio.play()
-    //     } else {
-    //       audio.pause()
-    //       console.log("paused");
-    //     }
-    //   }
-    //   //console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
-    //   createAudio(audioTrackInformation)
-    // }
+    if (e.code === 'Digit1') {
+      const audio = getAudio({ createOnCall: false })
+      console.log("m pressed", audio);
+      if (audio.paused !== undefined) {
+        if (audio.paused) {
+          audio.play()
+        } else {
+          audio.pause()
+          console.log("paused");
+        }
+      }
+      //console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
+      createAudio(audioTrackInformation)
+    }
     if (e.code ==='Digit2'){
       console.log("2 pressed");
       // scene.Object3D.getob
@@ -142,7 +145,7 @@ export default () => {
   //     //console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
   //   }
   // })
-  //Add shake
+  // //Add shake
   // if (beatFactorSuperLow === 1){
 
   // }
