@@ -97,20 +97,20 @@ export default () => {
 
   // play the ^above audio or pause it
   document.body.onkeyup = (e) => {
-    if (e.code === 'Digit1') {
-      const audio = getAudio({ createOnCall: false })
-      console.log("m pressed", audio);
-      if (audio.paused !== undefined) {
-        if (audio.paused) {
-          audio.play()
-        } else {
-          audio.pause()
-          console.log("paused");
-        }
-      }
-      //console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
-      createAudio(audioTrackInformation)
-    }
+    // if (e.code === 'Digit1') {
+    //   const audio = getAudio({ createOnCall: false })
+    //   console.log("m pressed", audio);
+    //   if (audio.paused !== undefined) {
+    //     if (audio.paused) {
+    //       audio.play()
+    //     } else {
+    //       audio.pause()
+    //       console.log("paused");
+    //     }
+    //   }
+    //   //console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
+    //   createAudio(audioTrackInformation)
+    // }
     if (e.code ==='Digit2'){
       console.log("2 pressed");
       // scene.Object3D.getob
