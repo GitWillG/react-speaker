@@ -112,7 +112,8 @@ export default () => {
       createAudio(audioTrackInformation)
     }
     if (e.code ==='Digit2'){
-      scene.Object3D.getob
+      console.log("2 pressed");
+      // scene.Object3D.getob
       // const audio = findAudio();
       const audio = getAudio({ createOnCall: false })
       console.log(audio);
