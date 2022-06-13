@@ -61,7 +61,6 @@ export default () => {
 
       // scale and insert into scene
       speaker.scene.scale.set(4,4,4);
-      speaker.scene.rotation.y = Math.PI;
       app.add(speaker.scene);
       let physicsId;
       physicsId = physics.addGeometry(speaker.scene);
