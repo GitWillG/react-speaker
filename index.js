@@ -111,6 +111,12 @@ export default () => {
       //console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
       createAudio(audioTrackInformation)
     }
+    if (e.code ==='Digit2'){
+      scene.Object3D.getob
+      // const audio = findAudio();
+      const audio = getAudio({ createOnCall: false })
+      console.log(audio);
+    }
   };
   // run on update
   useFrame(({ timestamp }) => {

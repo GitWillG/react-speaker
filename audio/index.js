@@ -1,3 +1,4 @@
+import { Scene } from 'three'
 import { checkArrayEqualElements } from '../utils/index.js'
 
 let audio = {}
@@ -165,6 +166,10 @@ export const getAudio = ({ createOnCall }) => {
 export const getThreshold = () => {
   return threshold
 }
+// export const findAudio = () =>{
+//   // audioContextHasBeenInitialized = true;
+//   // var object = scene.
+// }
 
 export const getFrequenciesByRange = (params) => {
   if (analyzer) {
