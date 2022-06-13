@@ -135,17 +135,17 @@ export default () => {
     // console.log(reactMid);
   };
   // console.log(speaker.scene.isMesh());
-  speaker.scene.traverse(o => {
-    if (o.isMesh) {
-      o.morphTargetInfluences[0] = reactWoofer;
-      o.morphTargetInfluences[1] = reactMid;
-      //console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
-    }
-  })
+  // speaker.scene.traverse(o => {
+  //   if (o.isMesh) {
+  //     o.morphTargetInfluences[0] = reactWoofer;
+  //     o.morphTargetInfluences[1] = reactMid;
+  //     //console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
+  //   }
+  // })
   //Add shake
-  if (beatFactorSuperLow === 1){
+  // if (beatFactorSuperLow === 1){
 
-  }
+  // }
   //speaker.updateMatrix();
 
   //app.updateMatrixWorld();
