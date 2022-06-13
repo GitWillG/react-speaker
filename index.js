@@ -62,6 +62,7 @@ export default () => {
       // scale and insert into scene
       speaker.scene.scale.set(4,4,4);
       speaker.scene.rotation.y = Math.PI;
+      speaker.scene.position = new THREE.Vector3(94, 5, 43);
       app.add(speaker.scene);
       let physicsId;
       physicsId = physics.addGeometry(speaker.scene);
