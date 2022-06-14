@@ -33,6 +33,7 @@ export default () => {
   // declare the app and speaker, as well as physics
   const app = useApp();
   let speaker = new THREE.Object3D();
+  let audio;
   //let prop = null;
   const physics = usePhysics();
   const physicsIds = [];
@@ -95,7 +96,7 @@ export default () => {
   // play the ^above audio or pause it
   document.body.onkeyup = (e) => {
     if (e.code === 'Digit1') {
-      const audio = getAudio({ createOnCall: false })
+      //audio = getAudio({ createOnCall: false })
       console.log("m pressed", audio);
       if (audio.paused !== undefined) {
         if (audio.paused) {
@@ -106,19 +107,23 @@ export default () => {
         }
       }
       //console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
-      createAudio(audioTrackInformation)
+      //createAudio(audioTrackInformation)
     }
-    if (e.code ==='Digit2'){
+    if (e.code === 'Digit2'){
       console.log("2 pressed");
       // scene.Object3D.getob
       // const audio = findAudio();
-      const audio = getAudio({ createOnCall: false })
+      audio = getAudio({ createOnCall: false })
       console.log(audio);
     }
   };
   // run on update
   useFrame(({ timestamp }) => {
-    console.log("isrunning");
+    // console.log("isrunning");
+    if (audio == null){
+      audio = getAudio({ createOnCall: false })
+      console.log(audio);
+    }
     elapsedTime = timestamp;
     const threshold = getThreshold();
 
