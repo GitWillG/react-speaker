@@ -55,8 +55,8 @@ export default () => {
       // });
       // scale and insert into scene
       speaker.scene.scale.set(4,4,4);
-      speaker.scene.position.set( 15, 0, 10);
-      speaker.scene.quaternion.set(0,1,0,0);
+      // speaker.scene.position.set( 15, 0, 10);
+      // speaker.scene.quaternion.set(0,1,0,0);
       let physicsId;
       physicsId = physics.addGeometry(speaker.scene);
       physicsIds.push(physicsId);
