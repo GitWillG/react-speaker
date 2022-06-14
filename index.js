@@ -118,26 +118,27 @@ export default () => {
   };
   // run on update
   useFrame(({ timestamp }) => {
-  elapsedTime = timestamp;
-  const threshold = getThreshold();
+    console.log("isrunning");
+    elapsedTime = timestamp;
+    const threshold = getThreshold();
 
-  // apply the factors to the morphs
-  if (beatFactorBass){
-    reactWoofer = beatFactorBass;
-    // console.log(reactWoofer);
+    // apply the factors to the morphs
+    if (beatFactorBass){
+      reactWoofer = beatFactorBass;
+      // console.log(reactWoofer);
 
-  };
-  if (beatFactorHi){
-    reactMid = beatFactorHi;
-    // console.log(reactMid);
-  };
-  //console.log(speaker.scene.isMesh());
-  speaker.scene.traverse(o => {
-    if (o.isMesh) {
-      o.morphTargetInfluences[0] = reactWoofer;
-      o.morphTargetInfluences[1] = reactMid;
-      //console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
-    }
+    };
+    if (beatFactorHi){
+      reactMid = beatFactorHi;
+      // console.log(reactMid);
+    };
+    //console.log(speaker.scene.isMesh());
+    speaker.scene.traverse(o => {
+      if (o.isMesh) {
+        o.morphTargetInfluences[0] = reactWoofer;
+        o.morphTargetInfluences[1] = reactMid;
+        //console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
+      }
   })
   // //Add shake
   // if (beatFactorSuperLow === 1){
