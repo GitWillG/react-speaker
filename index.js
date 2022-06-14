@@ -119,8 +119,8 @@ export default () => {
   };
   // run on update
   useFrame(({ timestamp }) => {
-    // console.log("isrunning");
-    if (audio == null){
+    console.log("isrunning", audio);
+    if (!audio){
       audio = getAudio({ createOnCall: false })
       console.log(audio);
     }
@@ -138,13 +138,15 @@ export default () => {
       // console.log(reactMid);
     };
     //console.log(speaker.scene.isMesh());
+    if (speaker.scene){
     speaker.scene.traverse(o => {
       if (o.isMesh) {
         o.morphTargetInfluences[0] = reactWoofer;
         o.morphTargetInfluences[1] = reactMid;
         //console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
       }
-  })
+    })
+  }
   // //Add shake
   // if (beatFactorSuperLow === 1){
 
