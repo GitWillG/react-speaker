@@ -32,89 +32,51 @@ export default () => {
   // var screenShake = ScreenShake();
   // declare the app and speaker, as well as physics
   const app = useApp();
-  let speaker = new THREE.Object3D();
+  // let speaker = new THREE.Object3D();
   //let prop = null;
   const physics = usePhysics();
   const physicsIds = [];
   //load in the asset from same location at /glb
-  // (async () => {
-  //     const u = `${baseUrl}/react-speaker.glb`;
-  //     speaker = await new Promise((accept, reject) => {
-  //         const {gltfLoader} = useLoaders();
-  //         gltfLoader.load(u, accept, function onprogress() {}, reject);
+  (async () => {
+      const u = `${baseUrl}/react-speaker.glb`;
+      speaker = await new Promise((accept, reject) => {
+          const {gltfLoader} = useLoaders();
+          gltfLoader.load(u, accept, function onprogress() {}, reject);
           
-  //     });
-  //     // speaker.scene.traverse(o => {
-  //     //   if (o.isMesh) {
-  //     //     // o.morphTargetInfluences[0] = 1;
-  //     //     reactWoofer = o.morphTargetInfluences[0];
-  //     //     reactMid = o.morphTargetInfluences[1];
-  //     //     console.log(o.morphTargetInfluences[0]);
-  //     //   }
-  //     //   if(o.name === 'Woofer') {  console.log("found woofer") }
-  //     // });
-  //     // scale and insert into scene
-  //     speaker.scene.scale.set(4,4,4);
-  //     speaker.scene.position.set( 15, 0, 10);
-  //     speaker.scene.quaternion.set(0,1,0,0);
-  //     app.add(speaker.scene);
-  //     let physicsId;
-  //     physicsId = physics.addGeometry(speaker.scene);
-  //     physicsIds.push(physicsId);
+      });
+      // speaker.scene.traverse(o => {
+      //   if (o.isMesh) {
+      //     // o.morphTargetInfluences[0] = 1;
+      //     reactWoofer = o.morphTargetInfluences[0];
+      //     reactMid = o.morphTargetInfluences[1];
+      //     console.log(o.morphTargetInfluences[0]);
+      //   }
+      //   if(o.name === 'Woofer') {  console.log("found woofer") }
+      // });
+      // scale and insert into scene
+      speaker.scene.scale.set(4,4,4);
+      speaker.scene.position.set( 15, 0, 10);
+      speaker.scene.quaternion.set(0,1,0,0);
+      let physicsId;
+      physicsId = physics.addGeometry(speaker.scene);
+      physicsIds.push(physicsId);
+      app.add(speaker.scene);
 
 
-  //     // update world
-  //     app.updateMatrixWorld();
-  //     //console.log(speaker.scene, speaker);
+      // update world
+      app.updateMatrixWorld();
+      //console.log(speaker.scene, speaker);
 
-  // })();
-  const loadSpeakers = (params, pos) =>{
-    const u = params.filePath + params.fileName;
-    return new Promise((resolve, reject) => {
-        const {gltfLoader} = useLoaders();
-        gltfLoader.load(u,(speaker) =>{
-
-          speaker.scene.scale.set(params.obScale);
-          speaker.scene.position.set(pos);
-          speaker.scene.quaternion.set(params.obQuarternion);
-          app.add(speaker.scene);
-          let physicsId;
-          physicsId = physics.addGeometry(speaker.scene);
-          physicsIds.push(physicsId);
-
-
-          // update world
-          app.updateMatrixWorld();
-          resolve(speaker.scene)
-    
-
-        })
-        
-    });
-    // speaker.scene.traverse(o => {
-    //   if (o.isMesh) {
-    //     // o.morphTargetInfluences[0] = 1;
-    //     reactWoofer = o.morphTargetInfluences[0];
-    //     reactMid = o.morphTargetInfluences[1];
-    //     console.log(o.morphTargetInfluences[0]);
-    //   }
-    //   if(o.name === 'Woofer') {  console.log("found woofer") }
-    // });
-    // scale and insert into scene
-    
-  }
+  })();
   
-  const speakerInfo ={
-    fileName: 'react-speaker.glb',
-    filePath: baseUrl,
-    obQuarternion: new THREE.Vector4(0,1,0,0),
-    obScale: new THREE.Vector3(4,4,4),
-  }
-  const speaker1 = loadSpeakers(speakerInfo, new THREE.Vector3(15,0,10));
-  //const speaker2 = loadSpeakers(speakerInfo, new THREE.Vector3(45,5,43));
+  
+  // const speakerInfo ={
+  //   fileName: 'react-speaker.glb',
+  //   filePath: baseUrl,
+  //   obQuarternion: new THREE.Vector4(0,1,0,0),
+  //   obScale: new THREE.Vector3(4,4,4),
+  // }
 
-  Promise.all([speaker1]);
-  //Promise.all([speaker2]);
 
    // creating audio with space bar click
    const audioTrackInformation = {
@@ -169,14 +131,14 @@ export default () => {
     reactMid = beatFactorHi;
     // console.log(reactMid);
   };
-  // console.log(speaker.scene.isMesh());
-  // speaker.scene.traverse(o => {
-  //   if (o.isMesh) {
-  //     o.morphTargetInfluences[0] = reactWoofer;
-  //     o.morphTargetInfluences[1] = reactMid;
-  //     //console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
-  //   }
-  // })
+  console.log(speaker.scene.isMesh());
+  speaker.scene.traverse(o => {
+    if (o.isMesh) {
+      o.morphTargetInfluences[0] = reactWoofer;
+      o.morphTargetInfluences[1] = reactMid;
+      //console.log(o.morphTargetInfluences[0], o.morphTargetInfluences[1], beatFactorSuperLow);
+    }
+  })
   // //Add shake
   // if (beatFactorSuperLow === 1){
 
