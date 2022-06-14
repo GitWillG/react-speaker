@@ -56,8 +56,6 @@ export default () => {
       // });
       // scale and insert into scene
       speaker.scene.scale.set(4,4,4);
-      // speaker.scene.position.set( 15, 0, 10);
-      // speaker.scene.quaternion.set(0,1,0,0);
       let physicsId;
       physicsId = physics.addGeometry(speaker.scene);
       physicsIds.push(physicsId);
@@ -70,15 +68,6 @@ export default () => {
 
   })();
   
-  
-  // const speakerInfo ={
-  //   fileName: 'react-speaker.glb',
-  //   filePath: baseUrl,
-  //   obQuarternion: new THREE.Vector4(0,1,0,0),
-  //   obScale: new THREE.Vector3(4,4,4),
-  // }
-
-
    // creating audio with space bar click
    const audioTrackInformation = {
     source: 'https://res.cloudinary.com/musixdevelop/video/upload/track-audios/Sad.mp3',
@@ -95,35 +84,35 @@ export default () => {
 
   // play the ^above audio or pause it
   document.body.onkeyup = (e) => {
-    // if (e.code === 'Digit1') {
-    //   //audio = getAudio({ createOnCall: false })
-    //   console.log("m pressed", audio);
-    //   if (audio.paused !== undefined) {
-    //     if (audio.paused) {
-    //       audio.play()
-    //     } else {
-    //       audio.pause()
-    //       console.log("paused");
-    //     }
-    //   }
-    //   //console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
-    //   //createAudio(audioTrackInformation)
-    // }
-    if (e.code === 'Digit2'){
-      console.log("2 pressed");
-      // scene.Object3D.getob
-      // const audio = findAudio();
-      audio = getAudio({ createOnCall: false })
-      console.log(audio);
+    if (e.code === 'Digit1') {
+      //audio = getAudio({ createOnCall: false })
+      console.log("m pressed", audio);
+      if (audio.paused !== undefined) {
+        if (audio.paused) {
+          audio.play()
+        } else {
+          audio.pause()
+          console.log("paused");
+        }
+      }
+      //console.log(beatFactorBass, reactWoofer, beatFactorHi, reactMid);
+      //createAudio(audioTrackInformation)
     }
+    // if (e.code === 'Digit2'){
+    //   console.log("2 pressed");
+    //   // scene.Object3D.getob
+    //   // const audio = findAudio();
+    //   audio = getAudio({ createOnCall: false })
+    //   console.log(audio);
+    // }
   };
   // run on update
   useFrame(({ timestamp }) => {
     // console.log("isrunning", audio);
-    if (!audio){
-      audio = getAudio({ createOnCall: false })
-      console.log(audio);
-    }
+    // if (!audio){
+    //   audio = getAudio({ createOnCall: false })
+    //   console.log(audio);
+    // }
     elapsedTime = timestamp;
     const threshold = getThreshold();
 
@@ -131,7 +120,6 @@ export default () => {
     if (beatFactorBass){
       reactWoofer = beatFactorBass;
       // console.log(reactWoofer);
-
     };
     if (beatFactorHi){
       reactMid = beatFactorHi;
