@@ -131,7 +131,7 @@ export default () => {
     reactMid = beatFactorHi;
     // console.log(reactMid);
   };
-  console.log(speaker.scene.isMesh());
+  //console.log(speaker.scene.isMesh());
   speaker.scene.traverse(o => {
     if (o.isMesh) {
       o.morphTargetInfluences[0] = reactWoofer;
